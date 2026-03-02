@@ -21,7 +21,6 @@ class EcuacionCuadratica:
         return 0
 
 
-# Programa de prueba
 a, b, c = map(float, input("Ingrese a, b, c: ").split())
 
 ecuacion = EcuacionCuadratica(a, b, c)
