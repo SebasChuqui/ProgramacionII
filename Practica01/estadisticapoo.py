@@ -18,5 +18,5 @@ numeros = list(map(float, input("Ingrese 10 números: ").split()))
 
 estad = Estadistica(numeros)
 
-print("El promedio es", estad.promedio())
-print("La desviación estándar es", estad.desviacion())
+print(f"El promedio es {estad.promedio():.3f}")
+print(f"La desviación estándar es {estad.desviacion():.3f}")

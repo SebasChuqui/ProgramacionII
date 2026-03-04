@@ -11,5 +11,5 @@ def desviacion(lista):
 
 numeros = list(map(float, input("Ingrese 10 números: ").split()))
 
-print("El promedio es", promedio(numeros))
-print("La desviación estándar es", desviacion(numeros))
+print(f"El promedio es {promedio(numeros):.3f}")
+print(f"La desviación estándar es {desviacion(numeros):.3f}")
