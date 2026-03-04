@@ -17,7 +17,7 @@ class EcuacionLineal:
     def getY(self):
         return (self.__a * self.__f - self.__e * self.__c) / (self.__a * self.__d - self.__b * self.__c)
 
-
+#programa de prueba (Test)
 a, b, c, d, e, f = map(float, input("Ingrese a, b, c, d, e, f: ").split())
 
 ecuacion = EcuacionLineal(a, b, c, d, e, f)
