@@ -1,26 +1,3 @@
-
-class Pagina:
-    def __init__(self, nropagina, contenido):
-        self.nropagina = nropagina
-        self.contenido = contenido
-        
-    def mostrarPagina(self):
-        print(f"página {self.nropagina}: {self.contenido}")
-
-class Horario:
-    def __init__(self, dapertura, hapertura, hcierre):
-        self.dapertura = dapertura
-        self.hapertura = hapertura
-        self.hcierre = hcierre
-        
-    
-    def mostrarHorario(self):
-        print("Horario de atención")
-        print(f"Días: {self.dapertura}")
-        print(f"Apertura: {self.hapertura}")
-        print(f"Cierre: {self.hcierre}")
-
-
 class Autor:
     def __init__(self, nombre, nacionalidad):
         self.nombre = nombre
@@ -53,6 +30,15 @@ class Prestamo:
         print(f"Fecha devolución: {self.fdevolucion}")        
 
 class Libro:
+    #composicion
+    class Pagina:
+        def __init__(self, nropagina, contenido):
+            self.nropagina = nropagina
+            self.contenido = contenido
+            
+        def mostrarPagina(self):
+            print(f"página {self.nropagina}: {self.contenido}")
+            
     def __init__(self, titulo, isbn, paginas):
         self.titulo = titulo
         self.isbn = isbn
@@ -60,7 +46,7 @@ class Libro:
         self.paginas = []
         numero=1 
         for contenido in paginas:
-            pagina = Pagina(numero, contenido)
+            pagina = Libro.Pagina(numero, contenido)
             self.paginas.append(pagina)
             numero += 1
             
@@ -70,13 +56,26 @@ class Libro:
             i.mostrarPagina()
       
 class Biblioteca:
+    #composicion
+    class Horario:
+        def __init__(self, dapertura, hapertura, hcierre):
+            self.dapertura = dapertura
+            self.hapertura = hapertura
+            self.hcierre = hcierre
+            
+        
+        def mostrarHorario(self):
+            print("Horario de atención")
+            print(f"Días: {self.dapertura}")
+            print(f"Apertura: {self.hapertura}")
+            print(f"Cierre: {self.hcierre}")
     def __init__(self, nombre):
         self.nombre=nombre
         #agregacion
         self.libros= []
         self.autores= []
         #composicion
-        self.horario= Horario("Lunes a Viernes", "08:00", "20:00")
+        self.horario= Biblioteca.Horario("Lunes a Viernes", "08:00", "20:00")
         self.prestamos=[]
     
     #agregacion
